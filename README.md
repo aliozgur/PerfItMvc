@@ -1,8 +1,7 @@
 ## PerfIt MVC!
 
-
 Windows performance monitoring for ASP.NET MVC actions
-
+### NOT : This is still a work in progress. You may get "Performance Counter is not a custom counter, it has to be initialized as ReadOnly" error.
 ## Credits
 
 
