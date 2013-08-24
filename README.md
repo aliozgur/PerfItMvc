@@ -29,7 +29,7 @@ Windows performance monitoring for ASP.NET MVC controller actions
 5. Open Visual Studio Developer Command prop as __Administrator_
 
 6. Enter InstallUtil.exe -i " < Path to your ASP.NET MVC app DLL > "
-  _To Uninstall you can use -u switch_
+   _To Uninstall you can use -u switch_
 
 7. In you Global.asax file 
  * PerfItMvcRuntime.Start("PerfItMvc.SampleApp") to Application_Start()
