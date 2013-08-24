@@ -9,7 +9,6 @@ namespace PerfItMvc
 {
 	public class AverageTimeHandler : CounterHandlerBase
 	{
-
 		private const string AverageTimeTakenTicksKey = "AverageTimeHandler_#_StopWatch_#_";
 		private readonly Lazy<PerformanceCounter> _counter;
 		private readonly Lazy<PerformanceCounter> _baseCounter;
