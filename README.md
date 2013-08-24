@@ -36,5 +36,5 @@ To Uninstall you can use -u switch
  * PerfItMvcRuntime.Stop() to Application_End()
 
 ## Samples
-* For sample usage please refer to the [Sample ASP.NET MVC 4 App] (..blob/master/src/PerfItMvc/PerfItMvc.SampleApp)
+* For sample usage please refer to the [Sample ASP.NET MVC 4 App] (/src/PerfItMvc/PerfItMvc.SampleApp)
 * You can refer to Ali Kheyrollahi's [blog post](http://byterot.blogspot.co.uk/2013/04/Monitor-your-ASP-NET-Web-API-application-using-your-own-custom-counters.html) for installation of the original PerfIt.
