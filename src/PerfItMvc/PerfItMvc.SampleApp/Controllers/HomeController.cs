@@ -7,17 +7,15 @@ using PerfItMvc;
 
 namespace PerfItMvc.SampleApp.Controllers
 {
-
-
 	public class HomeController : Controller
 	{
-		[PerfItActionFilter(Description = "Welcome Action",Counters = new[]{CounterTypes.TotalNoOfOperations,CounterTypes.AverageTimeTaken})]
+		[PerfItMvcFilter(Description = "Welcome Action",Counters = new[]{CounterTypes.TotalNoOfOperations,CounterTypes.AverageTimeTaken})]
 		public ActionResult Index()
 		{
 			return View();
 		}
 
-		[PerfItActionFilter(Description = "About Action", Counters = new[] { CounterTypes.TotalNoOfOperations, CounterTypes.AverageTimeTaken })]
+		[PerfItMvcFilter(Description = "About Action", Counters = new[] { CounterTypes.TotalNoOfOperations, CounterTypes.AverageTimeTaken })]
 		public ActionResult About()
 		{
 			return View();

@@ -19,13 +19,13 @@ namespace PerfItMvc.SampleApp
 		public override void Install(IDictionary stateSaver)
 		{
 			base.Install(stateSaver);
-			PerfItRuntime.Install("PerfItMvc.SampleApp");
+			PerfItMvcRuntime.Install();
 		}
 
 		public override void Uninstall(IDictionary savedState)
 		{
 			base.Uninstall(savedState);
-			PerfItRuntime.Uninstall();
+			PerfItMvcRuntime.Uninstall();
 		}
 	}
 }

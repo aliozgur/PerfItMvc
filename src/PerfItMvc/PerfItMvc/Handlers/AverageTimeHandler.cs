@@ -14,7 +14,7 @@ namespace PerfItMvc
 		private readonly Lazy<PerformanceCounter> _baseCounter;
 
 
-		public AverageTimeHandler(string applicationName, PerfItActionFilterAttribute filter)
+		public AverageTimeHandler(string applicationName, PerfItMvcFilterAttribute filter)
 			: base(applicationName, filter)
 		{
 
@@ -56,12 +56,12 @@ namespace PerfItMvc
 			get { return CounterTypes.AverageTimeTaken; }
 		}
 
-		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItContext context)
+		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context)
 		{
 			context.Data.Add(AverageTimeTakenTicksKey + Name, Stopwatch.StartNew());
 		}
 
-		public override void OnActionExecuted(ActionExecutedContext filterContext, PerfItContext context)
+		public override void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context)
 		{
 			var sw = (Stopwatch)context.Data[AverageTimeTakenTicksKey + Name];
 			sw.Stop();

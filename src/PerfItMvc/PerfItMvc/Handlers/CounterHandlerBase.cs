@@ -10,9 +10,9 @@ namespace PerfItMvc
 	public abstract class CounterHandlerBase : ICounterHandler
 	{
 		protected string _applicationName;
-		protected PerfItActionFilterAttribute _filter;
+		protected PerfItMvcFilterAttribute _filter;
 
-		public CounterHandlerBase(string applicationName, PerfItActionFilterAttribute filter)
+		public CounterHandlerBase(string applicationName, PerfItMvcFilterAttribute filter)
 		{
 			_filter = filter;
 			Name = filter.Name + "." + CounterType;
@@ -34,14 +34,14 @@ namespace PerfItMvc
 		/// </summary>
 		/// <param name="request"></param>
 		/// <param name="context"></param> 
-		public abstract void OnActionExecuting(ActionExecutingContext filterContext, PerfItContext context);
+		public abstract void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context);
 
 		/// <summary>
 		/// called as the async continuation on the delegating handler (when response is sent back)
 		/// </summary>
 		/// <param name="response"></param>
 		/// <param name="context"></param>
-		public abstract void OnActionExecuted(ActionExecutedContext filterContext, PerfItContext context);
+		public abstract void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context);
 
 		/// <summary>
 		/// Handler to return data for creating counters

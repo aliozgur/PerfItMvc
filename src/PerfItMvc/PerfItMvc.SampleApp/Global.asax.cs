@@ -16,7 +16,8 @@ namespace PerfItMvc.SampleApp
 	{
 		protected void Application_Start()
 		{
-			PerfItRuntime.ApplicationName = "PerfItMvc.SampleApp";
+			PerfItMvcRuntime.Start("PerfItMvc.SampleApp");
+			//PerfItRuntime.Install();
 			//PerfItRuntime.Uninstall();
 			AreaRegistration.RegisterAllAreas();
 
@@ -25,5 +26,11 @@ namespace PerfItMvc.SampleApp
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 		}
+
+		protected void Application_End()
+		{
+			PerfItMvcRuntime.Stop();
+		}
+
 	}
 }

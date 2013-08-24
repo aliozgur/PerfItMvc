@@ -12,7 +12,7 @@ namespace PerfItMvc
         private readonly Lazy<PerformanceCounter> _counter;
         private const string TimeTakenTicksKey = "NumberOfOperationsPerSecondHandler_#_StopWatch_#_";
 
-        public NumberOfOperationsPerSecondHandler(string applicationName, PerfItActionFilterAttribute filter) 
+        public NumberOfOperationsPerSecondHandler(string applicationName, PerfItMvcFilterAttribute filter) 
             : base(applicationName, filter)
         {
             _counter = new Lazy<PerformanceCounter>(() =>
@@ -36,12 +36,12 @@ namespace PerfItMvc
         }
 
 		
-		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItContext context)
+		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context)
         {
             context.Data.Add(TimeTakenTicksKey + Name, Stopwatch.StartNew());
         }
 
-		public override  void OnActionExecuted(ActionExecutedContext filterContext, PerfItContext context)
+		public override  void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context)
         {
             var sw = (Stopwatch)context.Data[TimeTakenTicksKey + Name];
             sw.Stop();
