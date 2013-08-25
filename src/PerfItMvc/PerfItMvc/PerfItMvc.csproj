@@ -58,7 +58,7 @@
     <None Include="PerfItMvc.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NuGetPacking.txt" />
+    <None Include="NuGetPacking.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
