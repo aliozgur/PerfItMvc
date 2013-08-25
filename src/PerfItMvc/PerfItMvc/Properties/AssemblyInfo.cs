@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PerfItMvc")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Windows performance monitoring for ASP.NET MVC controller actions")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ali Özgür")]
 [assembly: AssemblyProduct("PerfItMvc")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("PragmaTouch")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
