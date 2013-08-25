@@ -1,0 +1,5 @@
+﻿1- Open Command Line
+2- Change the directory to PerfItMvc.csproj folder
+3- Type "nuget spec" to generate the nuspec file (PerfItMvc.nuspec is already included in the project so this step will not be needed)
+4- Type "nuget pack PerfItMvc.csproj -Build -Symbols -Properties Configuration=Release".
+5- Type "nuget push PerfItMvc.nupkg <API KEY>"
