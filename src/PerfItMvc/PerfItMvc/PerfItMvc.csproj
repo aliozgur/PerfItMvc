@@ -47,7 +47,6 @@
     <Compile Include="Handlers\NumberOfOperationsPerSecondHandler.cs" />
     <Compile Include="Handlers\TotalCountHandler.cs" />
     <Compile Include="PerfItMvcFilterAttribute.cs" />
-    <Compile Include="PerfItMvcContext.cs" />
     <Compile Include="PerfItMvcRuntime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
