@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Web.Mvc;
 
 
-namespace PerfItMvc
+namespace PerfItMvc.Handlers
 {
 	public class TotalCountHandler : CounterHandlerBase
 	{

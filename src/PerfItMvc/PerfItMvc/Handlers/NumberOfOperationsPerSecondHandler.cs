@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace PerfItMvc
+namespace PerfItMvc.Handlers
 {
     public class NumberOfOperationsPerSecondHandler : CounterHandlerBase
     {

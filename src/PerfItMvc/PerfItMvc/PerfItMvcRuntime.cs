@@ -9,6 +9,8 @@ using System.Threading;
 using System.Web.Http;
 using System.Web.Mvc;
 
+using PerfItMvc.Handlers;
+
 namespace PerfItMvc
 {
 	public static class PerfItMvcRuntime
