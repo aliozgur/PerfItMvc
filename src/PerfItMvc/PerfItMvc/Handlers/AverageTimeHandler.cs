@@ -56,14 +56,17 @@ namespace PerfItMvc.Handlers
 			get { return CounterTypes.AverageTimeTaken; }
 		}
 
-		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context)
+		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-			context.Data.Add(AverageTimeTakenTicksKey + Name, Stopwatch.StartNew());
+			//context.Data.Add(AverageTimeTakenTicksKey + Name, Stopwatch.StartNew());
+			filterContext.Controller.TempData.Add(AverageTimeTakenTicksKey + Name, Stopwatch.StartNew());
 		}
 
-		public override void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context)
+		public override void OnActionExecuted(ActionExecutedContext filterContext)
 		{
-			var sw = (Stopwatch)context.Data[AverageTimeTakenTicksKey + Name];
+			//var sw = (Stopwatch)context.Data[AverageTimeTakenTicksKey + Name];
+			var sw = (Stopwatch)filterContext.Controller.TempData[AverageTimeTakenTicksKey + Name];
+
 			sw.Stop();
 			_counter.Value.IncrementBy(sw.ElapsedTicks);
 			_baseCounter.Value.Increment();

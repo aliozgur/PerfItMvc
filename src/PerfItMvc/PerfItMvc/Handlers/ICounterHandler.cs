@@ -10,8 +10,8 @@ namespace PerfItMvc.Handlers
 	public interface ICounterHandler : IDisposable
 	{
 		string CounterType { get; }
-		void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context);
-		void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context);
+		void OnActionExecuting(ActionExecutingContext filterContext);
+		void OnActionExecuted(ActionExecutedContext filterContext);
 		string Name { get; }
 		CounterCreationData[] BuildCreationData();
 	}

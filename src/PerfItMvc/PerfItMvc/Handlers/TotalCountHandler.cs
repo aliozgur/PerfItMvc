@@ -35,12 +35,12 @@ namespace PerfItMvc.Handlers
 			get { return CounterTypes.TotalNoOfOperations; }
 		}
 
-		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context)
+		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
 			// nothing 
 		}
 
-		public override void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context)
+		public override void OnActionExecuted(ActionExecutedContext filterContext)
 		{
 			_counter.Value.Increment();
 		}

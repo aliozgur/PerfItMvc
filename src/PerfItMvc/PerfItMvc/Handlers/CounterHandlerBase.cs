@@ -34,14 +34,14 @@ namespace PerfItMvc.Handlers
 		/// </summary>
 		/// <param name="request"></param>
 		/// <param name="context"></param> 
-		public abstract void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context);
+		public abstract void OnActionExecuting(ActionExecutingContext filterContext);
 
 		/// <summary>
 		/// called as the async continuation on the delegating handler (when response is sent back)
 		/// </summary>
 		/// <param name="response"></param>
 		/// <param name="context"></param>
-		public abstract void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context);
+		public abstract void OnActionExecuted(ActionExecutedContext filterContext);
 
 		/// <summary>
 		/// Handler to return data for creating counters

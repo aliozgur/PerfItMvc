@@ -36,15 +36,18 @@ namespace PerfItMvc.Handlers
         }
 
 		
-		public override void OnActionExecuting(ActionExecutingContext filterContext, PerfItMvcContext context)
+		public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            context.Data.Add(TimeTakenTicksKey + Name, Stopwatch.StartNew());
+			filterContext.Controller.TempData.Add(TimeTakenTicksKey + Name, Stopwatch.StartNew());
+
+            //context.Data.Add(TimeTakenTicksKey + Name, Stopwatch.StartNew());
         }
 
-		public override  void OnActionExecuted(ActionExecutedContext filterContext, PerfItMvcContext context)
+		public override  void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var sw = (Stopwatch)context.Data[TimeTakenTicksKey + Name];
-            sw.Stop();
+            //var sw = (Stopwatch)context.Data[TimeTakenTicksKey + Name];
+			var sw = (Stopwatch)filterContext.Controller.TempData[TimeTakenTicksKey + Name];
+			sw.Stop();
             _counter.Value.Increment();
         }
 

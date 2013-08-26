@@ -91,19 +91,19 @@ namespace PerfItMvc
 			_counterContexts.Clear();
 		}
 
-		internal static void OnActionExecuting(string actionName,ActionExecutingContext filterContext, PerfItMvcContext context)
+		internal static void OnActionExecuting(string actionName,ActionExecutingContext filterContext)
 		{
 			if (!_counterContexts.ContainsKey(actionName))
 				return;
-			_counterContexts[actionName].Handler.OnActionExecuting(filterContext, context);
+			_counterContexts[actionName].Handler.OnActionExecuting(filterContext);
 	
 		}
 
-		internal static void OnActionExecuted(string actionName,ActionExecutedContext filterContext, PerfItMvcContext context)
+		internal static void OnActionExecuted(string actionName,ActionExecutedContext filterContext)
 		{
 			if (!_counterContexts.ContainsKey(actionName))
 				return;
-			_counterContexts[actionName].Handler.OnActionExecuted(filterContext, context);
+			_counterContexts[actionName].Handler.OnActionExecuted(filterContext);
 		}
 
 	
@@ -206,12 +206,12 @@ namespace PerfItMvc
 								attr.Name = controllerName + "." + actionName.Name;
 							}
 
-							if (string.IsNullOrEmpty(attr.CategoryName))
-							{
-								attr.CategoryName = actionFilter.Assembly.GetName().Name;
-							}
-							attributes.Add(attr);
+						}						
+						if (string.IsNullOrEmpty(attr.CategoryName))
+						{
+							attr.CategoryName = actionFilter.Assembly.GetName().Name;
 						}
+						attributes.Add(attr);
 
 					}
 				}

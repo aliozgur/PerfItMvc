@@ -16,6 +16,8 @@ namespace PerfItMvc.SampleApp
 	{
 		protected void Application_Start()
 		{
+
+			PerfItMvcRuntime.Install();
 			PerfItMvcRuntime.Start("PerfItMvc.SampleApp");
 			//PerfItRuntime.Install();
 			//PerfItRuntime.Uninstall();

@@ -15,7 +15,6 @@ namespace PerfItMvc
 		public string Description { get; set; }
 		public string[] Counters { get; set; }
 
-		private PerfItMvcContext _context = null;
 
 
 		public override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -26,16 +25,14 @@ namespace PerfItMvc
 				return;		
 			}
 			
-			_context = new PerfItMvcContext();
 			this.Name = !String.IsNullOrWhiteSpace(Name) ? Name : filterContext.ActionDescriptor.ControllerDescriptor.ControllerType.Name + "." + filterContext.ActionDescriptor.ActionName;
 			this.CategoryName = !String.IsNullOrWhiteSpace(CategoryName) ? CategoryName : filterContext.Controller.GetType().Assembly.GetName().Name;
 
 			base.OnActionExecuting(filterContext);
-			_context = new PerfItMvcContext();
 			
 			foreach (string counterType in Counters)
 			{
-				PerfItMvcRuntime.OnActionExecuting(this.Name + "." + counterType, filterContext, _context);			
+				PerfItMvcRuntime.OnActionExecuting(this.Name + "." + counterType,filterContext);			
 			}
 
 		}
@@ -53,7 +50,7 @@ namespace PerfItMvc
 			base.OnActionExecuted(filterContext);
 			foreach (string counterType in Counters)
 			{
-				PerfItMvcRuntime.OnActionExecuted(this.Name + "." + counterType, filterContext, _context);
+				PerfItMvcRuntime.OnActionExecuted(this.Name + "." + counterType, filterContext);
 			}
 		}
 	}
